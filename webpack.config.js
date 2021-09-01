@@ -61,5 +61,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [new MiniCssExtractPlugin(), new webpack.ProgressPlugin()],
 };
