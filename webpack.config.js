@@ -13,7 +13,8 @@ module.exports = {
   target: 'web',
   stats: 'verbose',
   devServer: {
-    static: './public',
+    // static: './public',
+    contentBase: './public',
   },
   watchOptions: {
     ignored: /node_modules/,

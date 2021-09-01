@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "generate": "./script/generate_components",
-    "start": "yarn && yarn webpack serve --open",
+    "start": "yarn && yarn webpack-dev-server --open",
     "storybook": "yarn && start-storybook -p 9009"
   },
   "author": "",
@@ -21,27 +21,21 @@
     "acorn": "^8.4.1",
     "babel-loader": "^8.1.0",
     "core-js": "^3.16.4",
-    "css-loader": "^6.2.0",
-    "html-entities": "^2.3.2",
-    "mini-css-extract-plugin": "^2.2.0",
+    "css-loader": "^5.2.7",
+    "mini-css-extract-plugin": "^1.6.2",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass-loader": "^12.1.0",
+    "sass-loader": "^10.1.0",
     "thread-loader": "^3.0.4",
     "typescript": "^4.3.5",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.1.0"
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
-    "@storybook/builder-webpack5": "^6.3.7",
-    "@storybook/manager-webpack5": "^6.3.7",
     "@storybook/react": "^6.3.7",
     "@types/react-dom": "^17.0.9",
     "prettier": "^2.3.2"
-  },
-  "resolutions": {
-    "@storybook/builder-webpack5/webpack": "5.51.1"
   }
 }
