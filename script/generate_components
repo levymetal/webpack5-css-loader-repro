@@ -1,0 +1,35 @@
+#!/bin/bash
+
+rm -rf src/components/*
+
+for i in {0..300}
+do
+   DIR="src/components/C${i}"
+   mkdir $DIR
+
+   cat > "$DIR/Component.tsx" <<- EOM
+import * as React from 'react';
+import styles from './Component.module.scss';
+
+export default function Component() {
+  return <div className={styles.root}>kitten ${i}</div>;
+}
+EOM
+
+   cat > "$DIR/Component.module.scss" <<- EOM
+.root {
+   color: hotpink;
+}
+EOM
+
+   cat > "$DIR/Component.stories.tsx" <<- EOM
+import * as React from 'react';
+import Component from './Component';
+
+export const component = () => <Component />;
+
+export default {title: 'C${i}'};
+EOM
+
+   echo "generated C${i}"
+done
