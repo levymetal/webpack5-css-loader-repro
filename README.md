@@ -1,10 +1,10 @@
-# Webpack 5 css-loader perf repro
+# Webpack 5 storybook perf repro
 
-Repro showing performance degradation on incremental rebuilds when using `css-loader`. `main` branch is Webpack 5, `webpack4` branch is Webpack 4 with a virtually identical config. The diff can be seen here: https://github.com/levymetal/webpack5-css-loader-repro/pull/2/files
+Repro showing performance degradation on incremental rebuilds when using `storybook`. `main` branch is Webpack 5, `webpack4` branch is Webpack 4 with a virtually identical config. The diff can be seen here: https://github.com/levymetal/webpack5-css-loader-repro/pull/2/files
 
 ## Summary
 
-When using `css-loader` with Webpack 5, incremental builds take significantly longer than Webpack 4.
+When running `storybook` with Webpack 5, incremental builds take significantly longer than Webpack 4.
 
 ## Reproducing the issue
 
@@ -35,16 +35,20 @@ yarn generate
 yarn start
 ```
 
-5. Open one of the components and save the file. Observe the time it takes to rebuild.
+5. Open one of the components and save the file. Observe the time it takes to rebuild and note which modules are recompiled.
 
-6. Check out the `webpack4` branch
+6. Stop the webpack server, then start the storybook server
+
+```
+yarn storybook
+```
+
+7. Open one of the components and save the file. Observe all css is recompiled, causing a significantly longer rebuild.
+
+8. Check out the `webpack4` branch
 
 ```
 git switch webpack4
 ```
 
-Repeat steps 4 & 5 and compare the result. You can also use Storybook instead of the default server to observe the same result:
-
-```
-yarn storybook
-```
+Repeat steps 4 to 7 and compare the result. Rebuilds are fast on both the webpack and storybook servers.
