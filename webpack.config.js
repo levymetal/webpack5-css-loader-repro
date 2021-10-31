@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const paths = {
   src: path.join(__dirname, 'src'),
@@ -43,7 +42,7 @@ module.exports = {
         exclude: [paths.nodeModules],
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
@@ -61,5 +60,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin(), new webpack.ProgressPlugin()],
+  plugins: [new webpack.ProgressPlugin()],
 };

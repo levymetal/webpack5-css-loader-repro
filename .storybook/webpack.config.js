@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const custom = require('../webpack.config.js');
 
@@ -24,6 +23,6 @@ module.exports = async ({config, mode}) => {
       ...custom.resolve,
       modules: [paths.src, 'node_modules'],
     },
-    plugins: [...config.plugins, new MiniCssExtractPlugin()],
+    plugins: [...config.plugins],
   };
 };
