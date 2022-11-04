@@ -1,6 +1,6 @@
 # Webpack 5 storybook perf repro
 
-Repro showing performance degradation on incremental rebuilds when using `storybook`. `main` branch is Webpack 5, `webpack4` branch is Webpack 4 with a virtually identical config. The diff can be seen here: https://github.com/levymetal/webpack5-css-loader-repro/pull/2/files
+Repro showing performance degradation on incremental rebuilds when using `storybook`. `main` branch is Webpack 5, `webpack4` branch is Webpack 4 with a virtually identical config. The diff can be seen here: https://github.com/levymetal/webpack5-css-loader-repro/pull/3/files
 
 ## Summary
 
