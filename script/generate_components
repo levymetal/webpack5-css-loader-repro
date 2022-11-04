@@ -17,7 +17,7 @@ export default function Component() {
 EOM
 
    cat > "$DIR/Component.module.scss" <<- EOM
-@import '../../styles/consts';
+@use '../../styles/consts' as *;
 
 .root {
    color: \$hotpink;
