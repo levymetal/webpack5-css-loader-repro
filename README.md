@@ -2,6 +2,10 @@
 
 Repro showing performance degradation on incremental rebuilds when using `storybook`. `main` branch is Webpack 5, `webpack4` branch is Webpack 4 with a virtually identical config. The diff can be seen here: https://github.com/levymetal/webpack5-css-loader-repro/pull/3/files
 
+## Resolution
+
+This issue is resolved. The simplest solution is to replace `node-sass` with `sass`. If you must remain on `node-sass`, it can also be resolved by updating all build & storybook deps. See https://github.com/storybookjs/storybook/issues/5935#issuecomment-1339811809
+
 ## Summary
 
 When running `storybook` with Webpack 5, incremental builds take significantly longer than Webpack 4.
